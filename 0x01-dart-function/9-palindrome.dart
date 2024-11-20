@@ -1,5 +1,9 @@
+
+
 bool isPalindrome(String s){
-  List<String> splitString = s.split('');
-  String reverseString = splitString.reversed.join();
+  String reverseString = "";
+  for (int i = s.length -1; i >= 0;i--){
+    reverseString += s[i];
+  }
   return reverseString == s;
 }
