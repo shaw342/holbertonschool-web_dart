@@ -17,14 +17,14 @@ int whoWins(Map<String, int> teamA, Map<String, int> teamB){
 
 	teamB.forEach((key,value){
                 if (key == 'Free throws'){
-                        countTeamA += value;
+                        countTeamB += value;
                 }
 
                 if (key == '2 pointers'){
-                        countTeamA += (value * 2);
+                        countTeamB += (value * 2);
                 }
                 if (key == '3 pointers'){
-                        countTeamA += (value * 3);
+                        countTeamB += (value * 3);
                 }
         });
 
