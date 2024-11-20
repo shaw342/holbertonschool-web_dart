@@ -1,23 +1,22 @@
 class Password {
-  String? _password;
+  String _password;
 
-  Password({String? password}) : _password = password;
+  Password({required String password}) : _password = password;
 
-  String? get password => _password;
+  String get password => _password;
 
-  set password(String? password) {
+  set password(String password) {
     _password = password;
   }
 
   bool isValid() {
-    String pwd = _password ?? '';
-    if (pwd.length < 8 || pwd.length > 16) {
+    if (_password.length < 8 || _password.length > 16) {
       return false;
     }
 
-    bool hasUppercase = pwd.contains(RegExp(r'[A-Z]'));
-    bool hasLowercase = pwd.contains(RegExp(r'[a-z]'));
-    bool hasDigit = pwd.contains(RegExp(r'\d'));
+    bool hasUppercase = _password.contains(RegExp(r'[A-Z]'));
+    bool hasLowercase = _password.contains(RegExp(r'[a-z]'));
+    bool hasDigit = _password.contains(RegExp(r'\d'));
 
     return hasUppercase && hasLowercase && hasDigit;
   }
